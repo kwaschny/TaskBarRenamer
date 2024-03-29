@@ -59,7 +59,7 @@
         }
         public TaskBarWindow(long handle, string originalName, string newName, bool forceName)
         {
-            Handle = Handle;
+            Handle = handle;
             OriginalName = originalName;
             NewName = newName;
             ForceName = forceName;

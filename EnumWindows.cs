@@ -167,7 +167,7 @@ namespace TaskBarRenamer
         #region Structures
 
         [StructLayout(LayoutKind.Sequential, Pack = 4)]
-        private struct RECT
+        private readonly struct RECT
         {
             public readonly int Left;
             public readonly int Top;
@@ -176,7 +176,7 @@ namespace TaskBarRenamer
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 4)]
-        private struct FLASHWINFO
+        private readonly struct FLASHWINFO
         {
             private readonly int cbSize;
             private readonly IntPtr hwnd;
@@ -305,7 +305,7 @@ namespace TaskBarRenamer
         {
             get
             {
-                return ((UnManagedMethods.IsIconic(this.hWnd) == 0) ? false : true);
+                return (UnManagedMethods.IsIconic(this.hWnd) != 0);
             }
             set
             {
@@ -321,7 +321,7 @@ namespace TaskBarRenamer
         {
             get
             {
-                return ((UnManagedMethods.IsZoomed(this.hWnd) == 0) ? false : true);
+                return (UnManagedMethods.IsZoomed(this.hWnd) != 0);
             }
             set
             {
@@ -337,7 +337,7 @@ namespace TaskBarRenamer
         {
             get
             {
-                return ((UnManagedMethods.IsWindowVisible(this.hWnd) == 0) ? false : true);
+                return (UnManagedMethods.IsWindowVisible(this.hWnd) != 0);
             }
         }
 

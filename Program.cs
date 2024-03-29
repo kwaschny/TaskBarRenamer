@@ -39,7 +39,7 @@ namespace TaskBarRenamer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formMain());
+            Application.Run(new FormMain());
         }
 
         #region DLLImports
@@ -163,14 +163,10 @@ namespace TaskBarRenamer
                 if (values.Length < 5)
                     return FormOperationResult.ValuesCorrupt;
 
-                int tempValue;
 
                 // Fensterposition zuweisem
-                tempValue = -1;
-                int.TryParse(values[1], out tempValue);
+                int.TryParse(values[1], out int tempValue);
                 form.Left = tempValue;
-
-                tempValue = -1;
                 int.TryParse(values[2], out tempValue);
                 form.Top = tempValue;
 
@@ -179,11 +175,8 @@ namespace TaskBarRenamer
                 {
                     case FormBorderStyle.Sizable:
                     case FormBorderStyle.SizableToolWindow:
-                        tempValue = -1;
                         int.TryParse(values[3], out tempValue);
                         form.Width = tempValue;
-
-                        tempValue = -1;
                         int.TryParse(values[4], out tempValue);
                         form.Height = tempValue;
                         break;
@@ -244,8 +237,7 @@ namespace TaskBarRenamer
             }
             finally
             {
-                if (key != null) 
-                    key.Close();
+                key?.Close();
             }
 
             return browser;

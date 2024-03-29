@@ -1,16 +1,9 @@
 ﻿namespace TaskBarRenamer
 {
-    partial class formTextInput
+    partial class FormTextInput
     {
-        /// <summary>
-        /// Erforderliche Designervariable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Verwendete Ressourcen bereinigen.
-        /// </summary>
-        /// <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,15 +13,9 @@
             base.Dispose(disposing);
         }
 
-        #region Vom Windows Form-Designer generierter Code
-
-        /// <summary>
-        /// Erforderliche Methode für die Designerunterstützung.
-        /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formTextInput));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTextInput));
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.textBoxInput = new System.Windows.Forms.TextBox();
@@ -67,7 +54,7 @@
             this.checkBoxForceName.Name = "checkBoxForceName";
             this.checkBoxForceName.UseVisualStyleBackColor = true;
             // 
-            // formTextInput
+            // FormTextInput
             // 
             this.AcceptButton = this.buttonOK;
             resources.ApplyResources(this, "$this");
@@ -81,15 +68,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "formTextInput";
+            this.Name = "FormTextInput";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
-        #endregion
 
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOK;

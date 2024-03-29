@@ -153,6 +153,9 @@
   <data name="labelTo.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="labelTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
   <data name="labelTo.Text" xml:space="preserve">
     <value>zu diesem</value>
   </data>
@@ -173,6 +176,9 @@
   </data>
   <data name="labelFrom.IconPadding" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="labelFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 13</value>
   </data>
   <data name="labelFrom.Text" xml:space="preserve">
     <value>Umbenennen von</value>

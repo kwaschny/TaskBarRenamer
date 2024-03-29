@@ -1,16 +1,9 @@
 ﻿namespace TaskBarRenamer
 {
-    partial class formAboutTray
+    partial class FormAboutTray
     {
-        /// <summary>
-        /// Erforderliche Designervariable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Verwendete Ressourcen bereinigen.
-        /// </summary>
-        /// <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,15 +13,9 @@
             base.Dispose(disposing);
         }
 
-        #region Vom Windows Form-Designer generierter Code
-
-        /// <summary>
-        /// Erforderliche Methode für die Designerunterstützung.
-        /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAboutTray));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAboutTray));
             this.pictureBoxTray = new System.Windows.Forms.PictureBox();
             this.labelInformAbout = new System.Windows.Forms.Label();
             this.checkBoxDoNotShowAgain = new System.Windows.Forms.CheckBox();
@@ -61,7 +48,7 @@
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.UseVisualStyleBackColor = true;
             // 
-            // formAboutTray
+            // FormAboutTray
             // 
             this.AcceptButton = this.buttonOK;
             resources.ApplyResources(this, "$this");
@@ -73,7 +60,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "formAboutTray";
+            this.Name = "FormAboutTray";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.TopMost = true;
@@ -82,8 +69,6 @@
             this.PerformLayout();
 
         }
-
-        #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxTray;
         private System.Windows.Forms.Label labelInformAbout;

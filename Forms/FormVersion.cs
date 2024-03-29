@@ -3,18 +3,18 @@ using System.Windows.Forms;
 
 namespace TaskBarRenamer
 {
-    public partial class formVersion : Form
+    public partial class FormVersion : Form
     {
         #region Fields
 
-        private string website;
+        private readonly string website;
 
         #endregion
 
         #region Methods
 
         // Constructor
-        public formVersion(string buildVersion, string website)
+        public FormVersion(string buildVersion, string website)
         {
             this.website = website;
 

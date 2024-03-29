@@ -1,16 +1,9 @@
 ﻿namespace TaskBarRenamer
 {
-    partial class formSettings
+    partial class FormSettings
     {
-        /// <summary>
-        /// Erforderliche Designervariable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Verwendete Ressourcen bereinigen.
-        /// </summary>
-        /// <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,15 +13,9 @@
             base.Dispose(disposing);
         }
 
-        #region Vom Windows Form-Designer generierter Code
-
-        /// <summary>
-        /// Erforderliche Methode für die Designerunterstützung.
-        /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formSettings));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettings));
             this.tabControlSettings = new System.Windows.Forms.TabControl();
             this.tabPageRefresh = new System.Windows.Forms.TabPage();
             this.labelSeconds2 = new System.Windows.Forms.Label();
@@ -191,7 +178,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
-            // formSettings
+            // FormSettings
             // 
             this.AcceptButton = this.buttonOK;
             resources.ApplyResources(this, "$this");
@@ -203,7 +190,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "formSettings";
+            this.Name = "FormSettings";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.tabControlSettings.ResumeLayout(false);
@@ -216,8 +203,6 @@
             this.ResumeLayout(false);
 
         }
-
-        #endregion
 
         private System.Windows.Forms.TabControl tabControlSettings;
         private System.Windows.Forms.TabPage tabPageRefresh;

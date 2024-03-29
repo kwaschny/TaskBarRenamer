@@ -2,7 +2,7 @@
 
 namespace TaskBarRenamer
 {
-    public partial class formTextInput : Form
+    public partial class FormTextInput : Form
     {
         #region Fields
 
@@ -23,7 +23,7 @@ namespace TaskBarRenamer
         #region Methods
 
         // Constructor
-        public formTextInput(string description, string defaultText, bool forceName)
+        public FormTextInput(string description, string defaultText, bool forceName)
         {
             ForceName = false;
 

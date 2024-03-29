@@ -10,7 +10,7 @@ using TaskBarRenamer.Languages;
 
 namespace TaskBarRenamer
 {
-    public partial class formMain : Form
+    public partial class FormMain : Form
     {
         #region Fields
 
@@ -67,7 +67,7 @@ namespace TaskBarRenamer
 
             EnumWindows processWindows = new EnumWindows();
             processWindows.GetWindows();
-            
+
             if (processWindows.Items.Count > 0)
             {
                 foreach (EnumWindowsItem window in processWindows.Items)
@@ -249,7 +249,7 @@ namespace TaskBarRenamer
                         continue;
                 }
 
-                ListViewItem item = new ListViewItem(new string[] {window.NewName, window.OriginalName});
+                ListViewItem item = new ListViewItem(new string[] { window.NewName, window.OriginalName });
 
                 // Icon zuordnen
                 if (imageListSmallIcons.Images.ContainsKey(window.Handle.ToString()))
@@ -298,8 +298,10 @@ namespace TaskBarRenamer
                         continue;
                 }
 
-                ListViewItem item = new ListViewItem(new string[] {entry.FromName, entry.ToName});
-                item.Tag = entry;
+                ListViewItem item = new ListViewItem(new string[] { entry.FromName, entry.ToName })
+                {
+                    Tag = entry
+                };
 
                 listViewAutomatic.Items.Add(item);
             }
@@ -370,8 +372,7 @@ namespace TaskBarRenamer
                 if (item.Tag == null)
                     continue;
 
-                long handleKey;
-                if (long.TryParse(item.Tag.ToString(), out handleKey))
+                if (long.TryParse(item.Tag.ToString(), out long handleKey))
                 {
                     if (!handles.Contains(handleKey))
                         handles.Add(handleKey);
@@ -402,8 +403,7 @@ namespace TaskBarRenamer
                 if (item.Tag == null)
                     continue;
 
-                long currentHandle;
-                if (long.TryParse(item.Tag.ToString(), out currentHandle))
+                if (long.TryParse(item.Tag.ToString(), out long currentHandle))
                 {
                     if (handles.Contains(currentHandle))
                         item.Selected = true;
@@ -433,7 +433,7 @@ namespace TaskBarRenamer
         }
 
         // Constructor
-        public formMain()
+        public FormMain()
         {
             InitializeComponent();
 
@@ -456,7 +456,7 @@ namespace TaskBarRenamer
             if (e.Button == MouseButtons.Left)
                 ShowMain();
         }
-        
+
         // Main Menu
         private void Exit_Click(object sender, EventArgs e)
         {
@@ -464,13 +464,13 @@ namespace TaskBarRenamer
         }
         private void RefreshSettings_Click(object sender, EventArgs e)
         {
-            formSettings form = new formSettings(SettingCategory.Refresh);
+            FormSettings form = new FormSettings(SettingCategory.Refresh);
             if (form.ShowDialog(this) == DialogResult.OK)
                 RefreshIntervals();
         }
         private void UpdateSettings_Click(object sender, EventArgs e)
         {
-            formSettings form = new formSettings(SettingCategory.Update);
+            FormSettings form = new FormSettings(SettingCategory.Update);
             if (form.ShowDialog(this) == DialogResult.OK)
                 RefreshIntervals();
         }
@@ -484,7 +484,7 @@ namespace TaskBarRenamer
         }
         private void Version_Click(object sender, EventArgs e)
         {
-            formVersion form = new formVersion(Program.Build, Program.Website);
+            FormVersion form = new FormVersion(Program.Build, Program.Website);
             form.ShowDialog(this);
         }
 
@@ -496,15 +496,14 @@ namespace TaskBarRenamer
                 if (item.Tag == null)
                     continue;
 
-                int handle;
-                if (int.TryParse(item.Tag.ToString(), out handle))
+                if (int.TryParse(item.Tag.ToString(), out int handle))
                 {
                     bool forceName = initialForceNamesToolStripMenuItem.Checked;
                     if (taskBarWindows.ContainsKey(handle))
                         if (taskBarWindows[handle].IsRenamed)
                             forceName = taskBarWindows[handle].ForceName;
 
-                    formTextInput form = new formTextInput(Language.InputNewName, item.Text, forceName);
+                    FormTextInput form = new FormTextInput(Language.InputNewName, item.Text, forceName);
                     if (form.ShowDialog(this) == DialogResult.OK)
                         RenameWindow(handle, form.InputText, form.ForceName);
                 }
@@ -519,8 +518,7 @@ namespace TaskBarRenamer
                 if (item.Tag == null)
                     continue;
 
-                int handle;
-                if (int.TryParse(item.Tag.ToString(), out handle))
+                if (int.TryParse(item.Tag.ToString(), out int handle))
                 {
                     RestoreWindowName(handle);
                 }
@@ -535,9 +533,10 @@ namespace TaskBarRenamer
                 if (item.Tag == null)
                     continue;
 
-                int handle;
-                if (int.TryParse(item.Tag.ToString(), out handle))
+                if (int.TryParse(item.Tag.ToString(), out int handle))
+                {
                     ShowWindow(handle);
+                }
             }
         }
         private void Close_Click(object sender, EventArgs e)
@@ -547,8 +546,7 @@ namespace TaskBarRenamer
                 if (item.Tag == null)
                     continue;
 
-                int handle;
-                if (int.TryParse(item.Tag.ToString(), out handle))
+                if (int.TryParse(item.Tag.ToString(), out int handle))
                 {
                     CloseWindow(handle);
                 }
@@ -560,7 +558,7 @@ namespace TaskBarRenamer
         // Automatic Entries
         private void Add_Click(object sender, EventArgs e)
         {
-            formAutomatic form = new formAutomatic(initialForceNamesToolStripMenuItem.Checked);
+            FormAutomatic form = new FormAutomatic(initialForceNamesToolStripMenuItem.Checked);
             if (form.ShowDialog(this) == DialogResult.OK)
             {
                 AddAutomatic(form.RenameThis, form.ToThis, form.ForceName);
@@ -578,7 +576,7 @@ namespace TaskBarRenamer
 
                 AutomaticEntry entry = (AutomaticEntry)item.Tag;
 
-                formAutomatic form = new formAutomatic(entry.FromName, entry.ToName, entry.ForceName);
+                FormAutomatic form = new FormAutomatic(entry.FromName, entry.ToName, entry.ForceName);
                 if (form.ShowDialog(this) == DialogResult.OK)
                     AddAutomatic(form.RenameThis, form.ToThis, form.ForceName);
             }
@@ -645,8 +643,7 @@ namespace TaskBarRenamer
                 if (item.Tag == null)
                     continue;
 
-                int handle;
-                if (int.TryParse(item.Tag.ToString(), out handle))
+                if (int.TryParse(item.Tag.ToString(), out int handle))
                 {
                     if (taskBarWindows[handle].IsRenamed)
                     {
@@ -766,7 +763,7 @@ namespace TaskBarRenamer
 
             if (Properties.Settings.Default.InformAboutTray)
             {
-                formAboutTray form = new formAboutTray();
+                FormAboutTray form = new FormAboutTray();
                 if (form.ShowDialog(this) == DialogResult.OK)
                     Properties.Settings.Default.InformAboutTray = !form.DoNotShowAgain;
             }
@@ -790,12 +787,10 @@ namespace TaskBarRenamer
                     continue;
 
                 // Handle
-                long handle = 0;
-                long.TryParse(values[0], out handle);
+                long.TryParse(values[0], out long handle);
 
                 // Force name?
-                bool force = false;
-                bool.TryParse(values[2], out force);
+                bool.TryParse(values[2], out bool force);
 
                 if (!lastRenames.ContainsKey((int)handle))
                     lastRenames.Add((int)handle, new TaskBarWindow(handle, values[1], null, force));
@@ -810,8 +805,7 @@ namespace TaskBarRenamer
                     continue;
 
                 // Force name?
-                bool result = false;
-                bool.TryParse(values[2], out result);
+                bool.TryParse(values[2], out bool result);
 
                 if (!automaticEntries.ContainsKey(values[0]))
                     automaticEntries.Add(values[0], new AutomaticEntry(values[0], values[1], result));

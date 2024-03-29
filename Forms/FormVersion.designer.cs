@@ -1,16 +1,9 @@
 ﻿namespace TaskBarRenamer
 {
-    partial class formVersion
+    partial class FormVersion
     {
-        /// <summary>
-        /// Erforderliche Designervariable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Verwendete Ressourcen bereinigen.
-        /// </summary>
-        /// <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,15 +13,9 @@
             base.Dispose(disposing);
         }
 
-        #region Vom Windows Form-Designer generierter Code
-
-        /// <summary>
-        /// Erforderliche Methode für die Designerunterstützung.
-        /// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
-        /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formVersion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVersion));
             this.buttonClose = new System.Windows.Forms.Button();
             this.pictureBoxK = new System.Windows.Forms.PictureBox();
             this.labelProduct = new System.Windows.Forms.Label();
@@ -63,20 +50,20 @@
             // 
             // labelBuild
             // 
-            this.labelBuild.ForeColor = System.Drawing.SystemColors.GrayText;
             resources.ApplyResources(this.labelBuild, "labelBuild");
+            this.labelBuild.ForeColor = System.Drawing.SystemColors.GrayText;
             this.labelBuild.Name = "labelBuild";
             // 
             // labelWebsite
             // 
-            this.labelWebsite.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.labelWebsite, "labelWebsite");
+            this.labelWebsite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelWebsite.ForeColor = System.Drawing.Color.Blue;
             this.labelWebsite.Name = "labelWebsite";
             this.labelWebsite.TabStop = true;
             this.labelWebsite.Click += new System.EventHandler(this.Website_Clicked);
             // 
-            // formVersion
+            // FormVersion
             // 
             this.AcceptButton = this.buttonClose;
             resources.ApplyResources(this, "$this");
@@ -91,15 +78,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "formVersion";
+            this.Name = "FormVersion";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxK)).EndInit();
             this.ResumeLayout(false);
 
         }
-
-        #endregion
 
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.PictureBox pictureBoxK;

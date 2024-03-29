@@ -3,7 +3,7 @@ using TaskBarRenamer.Languages;
 
 namespace TaskBarRenamer
 {
-    public partial class formAutomatic : Form
+    public partial class FormAutomatic : Form
     {
         #region Fields
 
@@ -28,7 +28,7 @@ namespace TaskBarRenamer
         #region Methods
 
         // Constructor
-        public formAutomatic(string renameThis, string toThis, bool forceName)
+        public FormAutomatic(string renameThis, string toThis, bool forceName)
         {
             ForceName = false;
 
@@ -38,7 +38,7 @@ namespace TaskBarRenamer
             textBoxTo.Text = toThis;
             checkBoxForceName.Checked = forceName;
         }
-        public formAutomatic(bool forceName)
+        public FormAutomatic(bool forceName)
         {
             ForceName = false;
 

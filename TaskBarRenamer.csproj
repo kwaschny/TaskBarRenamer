@@ -104,45 +104,45 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\formVersion.cs">
+    <Compile Include="Forms\FormVersion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\formVersion.designer.cs">
-      <DependentUpon>formVersion.cs</DependentUpon>
+    <Compile Include="Forms\FormVersion.designer.cs">
+      <DependentUpon>FormVersion.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects.cs" />
     <Compile Include="Controls\NumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\formAboutTray.cs">
+    <Compile Include="Forms\FormAboutTray.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\formAboutTray.Designer.cs">
-      <DependentUpon>formAboutTray.cs</DependentUpon>
+    <Compile Include="Forms\FormAboutTray.Designer.cs">
+      <DependentUpon>FormAboutTray.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\formMain.cs">
+    <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\formMain.Designer.cs">
-      <DependentUpon>formMain.cs</DependentUpon>
+    <Compile Include="Forms\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\formSettings.cs">
+    <Compile Include="Forms\FormSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\formSettings.Designer.cs">
-      <DependentUpon>formSettings.cs</DependentUpon>
+    <Compile Include="Forms\FormSettings.Designer.cs">
+      <DependentUpon>FormSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\formTextInput.cs">
+    <Compile Include="Forms\FormTextInput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\formTextInput.Designer.cs">
-      <DependentUpon>formTextInput.cs</DependentUpon>
+    <Compile Include="Forms\FormTextInput.Designer.cs">
+      <DependentUpon>FormTextInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\formAutomatic.cs">
+    <Compile Include="Forms\FormAutomatic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\formAutomatic.Designer.cs">
-      <DependentUpon>formAutomatic.cs</DependentUpon>
+    <Compile Include="Forms\FormAutomatic.Designer.cs">
+      <DependentUpon>FormAutomatic.cs</DependentUpon>
     </Compile>
     <Compile Include="Languages\Language.de.Designer.cs">
       <DependentUpon>Language.de.resx</DependentUpon>
@@ -157,41 +157,41 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EnumWindows.cs" />
-    <EmbeddedResource Include="Forms\formAboutTray.de.resx">
-      <DependentUpon>formAboutTray.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormAboutTray.de.resx">
+      <DependentUpon>FormAboutTray.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\formAboutTray.resx">
-      <DependentUpon>formAboutTray.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormAboutTray.resx">
+      <DependentUpon>FormAboutTray.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\formAutomatic.de.resx">
-      <DependentUpon>formAutomatic.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormAutomatic.de.resx">
+      <DependentUpon>FormAutomatic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\formMain.de.resx">
-      <DependentUpon>formMain.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormMain.de.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\formMain.resx">
-      <DependentUpon>formMain.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\formSettings.de.resx">
-      <DependentUpon>formSettings.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormSettings.de.resx">
+      <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\formSettings.resx">
-      <DependentUpon>formSettings.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormSettings.resx">
+      <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\formTextInput.de.resx">
-      <DependentUpon>formTextInput.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormTextInput.de.resx">
+      <DependentUpon>FormTextInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\formTextInput.resx">
-      <DependentUpon>formTextInput.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormTextInput.resx">
+      <DependentUpon>FormTextInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\formAutomatic.resx">
-      <DependentUpon>formAutomatic.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormAutomatic.resx">
+      <DependentUpon>FormAutomatic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\formVersion.de.resx">
-      <DependentUpon>formVersion.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormVersion.de.resx">
+      <DependentUpon>FormVersion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\formVersion.resx">
-      <DependentUpon>formVersion.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormVersion.resx">
+      <DependentUpon>FormVersion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\Language.de.resx">
       <Generator>ResXFileCodeGenerator</Generator>

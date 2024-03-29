@@ -2,7 +2,7 @@
 
 namespace TaskBarRenamer
 {
-    public partial class formAboutTray : Form
+    public partial class FormAboutTray : Form
     {
         #region Fields
 
@@ -19,7 +19,7 @@ namespace TaskBarRenamer
         #region Methods
 
         // Constructor
-        public formAboutTray()
+        public FormAboutTray()
         {
             InitializeComponent();
         }

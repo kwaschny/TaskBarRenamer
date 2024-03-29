@@ -13,12 +13,12 @@ namespace TaskBarRenamer
 
     #endregion
 
-    public partial class formSettings : Form
+    public partial class FormSettings : Form
     {
         #region Methods
 
         // Constructor
-        public formSettings(SettingCategory category)
+        public FormSettings(SettingCategory category)
         {
             InitializeComponent();
 
