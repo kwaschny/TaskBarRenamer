@@ -27,7 +27,6 @@ namespace TaskBarRenamer
 
         #region Methods
 
-        // Constructor
         public FormAutomatic(string renameThis, string toThis, bool forceName)
         {
             ForceName = false;

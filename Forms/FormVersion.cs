@@ -13,7 +13,6 @@ namespace TaskBarRenamer
 
         #region Methods
 
-        // Constructor
         public FormVersion(string buildVersion, string website)
         {
             this.website = website;

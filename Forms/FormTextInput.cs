@@ -22,7 +22,6 @@ namespace TaskBarRenamer
 
         #region Methods
 
-        // Constructor
         public FormTextInput(string description, string defaultText, bool forceName)
         {
             ForceName = false;

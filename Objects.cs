@@ -47,7 +47,6 @@
             ForceName = predecessor.ForceName;
         }
 
-        // Constructor
         public TaskBarWindow(EnumWindowsItem window)
         {
             if (window == null)
@@ -92,7 +91,6 @@
 
         #region Methods
 
-        // Constructor
         public AutomaticEntry(string fromName, string toName, bool forceName)
         {
             FromName = fromName;

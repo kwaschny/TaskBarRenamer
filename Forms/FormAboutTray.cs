@@ -18,7 +18,6 @@ namespace TaskBarRenamer
 
         #region Methods
 
-        // Constructor
         public FormAboutTray()
         {
             InitializeComponent();

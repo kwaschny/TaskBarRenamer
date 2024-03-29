@@ -14,15 +14,17 @@ namespace TaskBarRenamer
     {
         #region Fields
 
-        // Listing
-        private readonly Dictionary<int, TaskBarWindow> taskBarWindows = new Dictionary<int, TaskBarWindow>(); // int => Handle
-        private readonly Dictionary<int, TaskBarWindow> lastRenames = new Dictionary<int, TaskBarWindow>(); // int => Handle
-        private readonly Dictionary<string, AutomaticEntry> automaticEntries = new Dictionary<string, AutomaticEntry>(); // string => FromName
+        // int => Handle
+        private readonly Dictionary<int, TaskBarWindow> taskBarWindows = new Dictionary<int, TaskBarWindow>();
 
-        // Program Update
+        // int => Handle
+        private readonly Dictionary<int, TaskBarWindow> lastRenames = new Dictionary<int, TaskBarWindow>();
+
+        // string => FromName
+        private readonly Dictionary<string, AutomaticEntry> automaticEntries = new Dictionary<string, AutomaticEntry>();
+
         private bool updateCheckDone = false;
 
-        // Misc
         private ListView CurrentListView
         {
             get
@@ -58,7 +60,6 @@ namespace TaskBarRenamer
 
         #region Methods
 
-        // Listing
         private IEnumerable<EnumWindowsItem> GetTaskBarWindows(bool includeAllWindows)
         {
             const int GW_OWNER = 4;
@@ -86,7 +87,6 @@ namespace TaskBarRenamer
         }
         private Icon GetIconFromWindowHanlde(int hWnd)
         {
-            // primär Window-Icon extrahieren (SendMessage), ansonsten WindowClass-Icon extrahieren (GetClassLongA)
             const int WM_GETICON = 0x007f;
             const int GCL_HICON = -14;
 
@@ -102,7 +102,6 @@ namespace TaskBarRenamer
         }
         private void Defrag()
         {
-            // Defrag
             List<int> handles = new List<int>();
             foreach (int handle in taskBarWindows.Keys)
             {
@@ -113,7 +112,6 @@ namespace TaskBarRenamer
                 taskBarWindows.Remove(handle);
         }
 
-        // Window Operations
         private void RenameWindow(int hWnd, string text, bool forceName)
         {
             const int WM_SETTEXT = 0x0C;
@@ -121,7 +119,6 @@ namespace TaskBarRenamer
             IntPtr textPointer = IntPtr.Zero;
             try
             {
-                // String im unverwalteten Speicher anlegen und an das Window senden
                 textPointer = Marshal.StringToHGlobalUni(text);
                 Program.SendMessage(hWnd, WM_SETTEXT, IntPtr.Zero, textPointer);
                 if (taskBarWindows.ContainsKey(hWnd))
@@ -132,7 +129,6 @@ namespace TaskBarRenamer
             }
             finally
             {
-                // String im unverwalteten Speicher unbedingt wieder freigeben 
                 Marshal.FreeHGlobal(textPointer);
             }
         }
@@ -141,7 +137,7 @@ namespace TaskBarRenamer
             if (!taskBarWindows.ContainsKey(hWnd))
                 return;
 
-            RenameWindow(hWnd, taskBarWindows[hWnd].OriginalName, false); //taskBarWindows[hWnd].ForceName);
+            RenameWindow(hWnd, taskBarWindows[hWnd].OriginalName, false);
             taskBarWindows[hWnd].NewName = null;
         }
         private void ShowWindow(int hWnd)
@@ -165,7 +161,6 @@ namespace TaskBarRenamer
             }
         }
 
-        // TaskBar Windows
         private void ShowTaskBarWindows(string searchText)
         {
             listViewWindows.Items.Clear();
@@ -178,7 +173,6 @@ namespace TaskBarRenamer
                 if (lastRenames.ContainsKey((int)window.Handle))
                     taskBarWindow.SetPredecessor(lastRenames[(int)window.Handle]);
 
-                // Automatisches Umbenennen
                 string container = string.Empty;
                 if (automaticEntries.ContainsKey(window.Text))
                     container = window.Text;
@@ -187,7 +181,6 @@ namespace TaskBarRenamer
                 if (!string.IsNullOrEmpty(container))
                     RenameWindow((int)window.Handle, automaticEntries[container].ToName, automaticEntries[container].ForceName);
 
-                // Suchfilter
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     string text = searchText.ToLower();
@@ -197,7 +190,6 @@ namespace TaskBarRenamer
 
                 ListViewItem item = new ListViewItem();
 
-                // falls keine Window-Caption vorhanden, WindowClass-Caption verwenden
                 if (string.IsNullOrEmpty(window.Text))
                 {
                     item.Text = window.ClassName;
@@ -206,7 +198,6 @@ namespace TaskBarRenamer
                 else
                     item.Text = window.Text;
 
-                // Icon zuordnen
                 Icon icon = GetIconFromWindowHanlde((int)window.Handle);
                 if (icon != null)
                 {
@@ -228,7 +219,6 @@ namespace TaskBarRenamer
         }
         private void ShowRenamedWindows(string searchText)
         {
-            // Validierung
             if (listViewRenamed.Columns.Count < 2)
                 return;
 
@@ -241,7 +231,6 @@ namespace TaskBarRenamer
                 if (!window.IsRenamed)
                     continue;
 
-                // Suchfilter
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     string text = searchText.ToLower();
@@ -251,7 +240,6 @@ namespace TaskBarRenamer
 
                 ListViewItem item = new ListViewItem(new string[] { window.NewName, window.OriginalName });
 
-                // Icon zuordnen
                 if (imageListSmallIcons.Images.ContainsKey(window.Handle.ToString()))
                     item.ImageKey = window.Handle.ToString();
 
@@ -265,10 +253,8 @@ namespace TaskBarRenamer
             ShowRenamedWindows(string.Empty);
         }
 
-        // Automatic Entries
         private void AddAutomatic(string renameThis, string toThis, bool forceName)
         {
-            // grundsätzlich überschreiben, falls bereits vorhanden
             if (automaticEntries.ContainsKey(renameThis))
                 automaticEntries.Remove(renameThis);
 
@@ -281,7 +267,6 @@ namespace TaskBarRenamer
         }
         private void ShowAutomaticEntries(string searchText)
         {
-            // Validierung
             if (listViewAutomatic.Columns.Count < 2)
                 return;
 
@@ -290,7 +275,6 @@ namespace TaskBarRenamer
             listViewAutomatic.BeginUpdate();
             foreach (AutomaticEntry entry in automaticEntries.Values)
             {
-                // Suchfilter
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     string text = searchText.ToLower();
@@ -325,7 +309,6 @@ namespace TaskBarRenamer
             List<long> handles = new List<long>();
             List<string> names = new List<string>();
 
-            // aktuelle Selektion speichern
             if ((currentListView == listViewWindows) || (currentListView == listViewRenamed))
                 handles = SaveListViewSelectionByHandle(currentListView);
             else if (currentListView == listViewAutomatic)
@@ -344,13 +327,11 @@ namespace TaskBarRenamer
                 ShowAutomaticEntries();
             }
 
-            // Selektion wiederherstellen
             if ((currentListView == listViewWindows) || (currentListView == listViewRenamed))
                 RestoreListViewSelectionByHandle(currentListView, handles);
             else if (currentListView == listViewAutomatic)
                 RestoreListViewSelectionByName(currentListView, names);
 
-            // Selektion validieren
             bool selected = (listViewAutomatic.SelectedItems.Count > 0);
             buttonEdit.Enabled = selected;
             buttonRemove.Enabled = selected;
@@ -361,14 +342,12 @@ namespace TaskBarRenamer
             timerForceNames.Interval = (int)Math.Round((decimal)(Properties.Settings.Default.ForceNamesEvery * 1000));
         }
 
-        // ListView
         private List<long> SaveListViewSelectionByHandle(ListView listView)
         {
             List<long> handles = new List<long>();
 
             foreach (ListViewItem item in listView.SelectedItems)
             {
-                // Handle als Identifier verwenden
                 if (item.Tag == null)
                     continue;
 
@@ -399,7 +378,6 @@ namespace TaskBarRenamer
             listView.BeginUpdate();
             foreach (ListViewItem item in listView.Items)
             {
-                // Handle als Identifier auswerten
                 if (item.Tag == null)
                     continue;
 
@@ -423,7 +401,6 @@ namespace TaskBarRenamer
             listView.EndUpdate();
         }
 
-        // Program Update
         private void CheckForUpdate()
         {
             if (updater.IsBusy)
@@ -432,7 +409,6 @@ namespace TaskBarRenamer
                 updater.RunWorkerAsync();
         }
 
-        // Constructor
         public FormMain()
         {
             InitializeComponent();
@@ -446,7 +422,6 @@ namespace TaskBarRenamer
 
         #region Click/Key-Events
 
-        // Display Main Window (when in Tray)
         private void ShowMain_Click(object sender, EventArgs e)
         {
             ShowMain();
@@ -457,7 +432,6 @@ namespace TaskBarRenamer
                 ShowMain();
         }
 
-        // Main Menu
         private void Exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -488,7 +462,6 @@ namespace TaskBarRenamer
             form.ShowDialog(this);
         }
 
-        // TaskBar Windows
         private void Rename_Click(object sender, EventArgs e)
         {
             foreach (ListViewItem item in CurrentListView.SelectedItems)
@@ -555,7 +528,6 @@ namespace TaskBarRenamer
             RefreshList();
         }
 
-        // Automatic Entries
         private void Add_Click(object sender, EventArgs e)
         {
             FormAutomatic form = new FormAutomatic(initialForceNamesToolStripMenuItem.Checked);
@@ -570,7 +542,6 @@ namespace TaskBarRenamer
         {
             foreach (ListViewItem item in listViewAutomatic.SelectedItems)
             {
-                // Validierung
                 if ((item.SubItems.Count < 2) || !(item.Tag is AutomaticEntry))
                     continue;
 
@@ -593,7 +564,6 @@ namespace TaskBarRenamer
             RefreshList();
         }
 
-        // Refresh
         private void Form_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F5)
@@ -604,7 +574,6 @@ namespace TaskBarRenamer
 
         #region Events
 
-        // Search
         private void Search_Enter(object sender, EventArgs e)
         {
             if (textBoxSearch.Text == Language.Search)
@@ -621,16 +590,13 @@ namespace TaskBarRenamer
             }
         }
 
-        // Refresh
         private void Refresh_Changed(object sender, EventArgs e)
         {
             RefreshList();
         }
 
-        // Context Menu
         private void ContextMenuWindows_Opening(object sender, CancelEventArgs e)
         {
-            // ContextMenu nur bei Auswahl anzeigen
             if (CurrentListView.SelectedItems.Count <= 0)
             {
                 e.Cancel = true;
@@ -662,7 +628,6 @@ namespace TaskBarRenamer
             removeToolStripMenuItem.Visible = visible;
         }
 
-        // Automatic Entry
         private void Automatic_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool selected = (listViewAutomatic.SelectedItems.Count > 0);
@@ -670,7 +635,6 @@ namespace TaskBarRenamer
             buttonRemove.Enabled = selected;
         }
 
-        // Ticks
         private void AutoRefresh_Tick(object sender, EventArgs e)
         {
             if (!Properties.Settings.Default.AutoRefresh)
@@ -684,7 +648,6 @@ namespace TaskBarRenamer
         {
             foreach (TaskBarWindow window in taskBarWindows.Values)
             {
-                // nur Text bei Fenstern setzen, dessen Name erzwungen werden soll
                 if (!window.ForceName)
                     continue;
 
@@ -692,7 +655,6 @@ namespace TaskBarRenamer
             }
         }
 
-        // Program Update
         private void Updater_DoWork(object sender, DoWorkEventArgs e)
         {
             string downloadLink = string.Empty;
@@ -713,11 +675,9 @@ namespace TaskBarRenamer
                         if (tempNode != null)
                             if (Application.ProductVersion.Equals(tempNode.InnerText))
                             {
-                                // no Update available
                             }
                             else
                             {
-                                // new Update available
                                 tempNode = appNode["Download"];
                                 if (tempNode != null)
                                     downloadLink = tempNode.InnerText;
@@ -752,7 +712,6 @@ namespace TaskBarRenamer
             updateCheckDone = true;
         }
 
-        // Form
         private void Form_Resize(object sender, EventArgs e)
         {
             if (this.WindowState != FormWindowState.Minimized)
@@ -771,40 +730,29 @@ namespace TaskBarRenamer
         private void Form_Shown(object sender, EventArgs e)
         {
             RefreshList();
-
-            // nach Updates suchen
-            //if (Properties.Settings.Default.CheckForUpdate)
-            //    CheckForUpdate();
         }
         private void Form_Load(object sender, EventArgs e)
         {
-            // zuletzt umbenannte Fenster
             foreach (string line in Properties.Settings.Default.LastRenames)
             {
-                // Validierung
                 string[] values = line.Split(';');
                 if (values.Length < 3)
                     continue;
 
-                // Handle
                 long.TryParse(values[0], out long handle);
 
-                // Force name?
                 bool.TryParse(values[2], out bool force);
 
                 if (!lastRenames.ContainsKey((int)handle))
                     lastRenames.Add((int)handle, new TaskBarWindow(handle, values[1], null, force));
             }
 
-            // Automatisches Umbenennen initalisieren
             foreach (string line in Properties.Settings.Default.Automatic)
             {
-                // Validierung
                 string[] values = line.Split(';');
                 if (values.Length < 3)
                     continue;
 
-                // Force name?
                 bool.TryParse(values[2], out bool result);
 
                 if (!automaticEntries.ContainsKey(values[0]))
@@ -821,7 +769,6 @@ namespace TaskBarRenamer
         }
         private void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Hinweis, wenn Namen erzwungen werden sollen
             if (NumberOfForcedNames > 0)
                 if (MessageBox.Show(Language.ClosingPrompt, string.Empty, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button3) != DialogResult.Yes)
                 {
@@ -829,13 +776,11 @@ namespace TaskBarRenamer
                     return;
                 }
 
-            // umbenannte Fenster merken
             Properties.Settings.Default.LastRenames.Clear();
             foreach (TaskBarWindow window in taskBarWindows.Values)
                 if (window.IsRenamed)
                     Properties.Settings.Default.LastRenames.Add(string.Format("{0};{1};{2}", window.Handle, window.OriginalName.Replace(";", ","), window.ForceName));
 
-            // Automatisches Umbenennen sichern
             Properties.Settings.Default.Automatic.Clear();
             foreach (AutomaticEntry entry in automaticEntries.Values)
                 Properties.Settings.Default.Automatic.Add(string.Format("{0};{1};{2}", entry.FromName, entry.ToName, entry.ForceName));

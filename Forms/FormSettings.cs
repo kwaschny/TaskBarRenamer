@@ -17,7 +17,6 @@ namespace TaskBarRenamer
     {
         #region Methods
 
-        // Constructor
         public FormSettings(SettingCategory category)
         {
             InitializeComponent();
@@ -25,7 +24,6 @@ namespace TaskBarRenamer
             if ((int)category < tabControlSettings.TabCount)
                 tabControlSettings.SelectedIndex = (int)category;
 
-            // Refresh
             checkBoxAutoRefresh.Checked = Properties.Settings.Default.AutoRefresh;
             numericUpDownRefreshEvery.SetValue(Properties.Settings.Default.RefreshEvery);
             checkBoxForegroundOnly.Checked = Properties.Settings.Default.ForegroundOnly;
@@ -38,7 +36,6 @@ namespace TaskBarRenamer
 
         private void OK_Click(object sender, System.EventArgs e)
         {
-            // Refresh
             Properties.Settings.Default.AutoRefresh = checkBoxAutoRefresh.Checked;
             Properties.Settings.Default.RefreshEvery = (int)numericUpDownRefreshEvery.Value;
             Properties.Settings.Default.ForegroundOnly = checkBoxForegroundOnly.Checked;

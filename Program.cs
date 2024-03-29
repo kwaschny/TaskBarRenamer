@@ -33,7 +33,6 @@ namespace TaskBarRenamer
 
         #region Methods
 
-        // Constructor
         [STAThread]
         private static void Main()
         {
@@ -87,21 +86,17 @@ namespace TaskBarRenamer
 
         #endregion
 
-        // Misc
         private static int ContainsLike(StringCollection stringCollection, string value)
         {
-            // durch Liste laufen und nach Vorkommen des Wertes suchen
             for (int i = 0; i < stringCollection.Count; i++)
             {
                 if (stringCollection[i].Contains(value))
                     return i;
             }
 
-            // falls kein Vorkommen
             return -1;
         }
 
-        // Form
         public enum FormOperationResult
         {
             Successful,
@@ -115,14 +110,12 @@ namespace TaskBarRenamer
         }
         public static FormOperationResult SaveForm(Form form, StringCollection formsCollection)
         {
-            // Validierung
             if (form == null)
                 return FormOperationResult.FormIsNull;
 
             if (formsCollection == null)
                 formsCollection = new StringCollection();
 
-            // Fenster nur speichern, wenn sichtbar und weder minimiert noch maximiert
             if (!form.Visible)
                 return FormOperationResult.FormNotVisible;
             if (form.WindowState == FormWindowState.Minimized)
@@ -130,47 +123,37 @@ namespace TaskBarRenamer
             if (form.WindowState == FormWindowState.Maximized)
                 return FormOperationResult.FormMaximized;
 
-            // falls Fenster in der Liste bereits vorhanden, dann entfernen,
-            // um geändert neu hinzuzufügen
             int index = ContainsLike(formsCollection, form.Name);
             if (index >= 0)
                 formsCollection.RemoveAt(index);
 
-            // String der Liste hinzufügen als Name|Left|Top|Width|Height
             formsCollection.Add(string.Format("{0}|{1}|{2}|{3}|{4}", form.Name, form.Left, form.Top, form.Width, form.Height));
 
             return FormOperationResult.Successful;
         }
         public static FormOperationResult LoadForm(Form form, StringCollection formsCollection)
         {
-            // Validierung
             if (form == null)
                 return FormOperationResult.FormIsNull;
 
             if (formsCollection == null)
                 return FormOperationResult.CollectionIsNull;
 
-            // sichtbaren Bildschirmbereich ermitteln (erforderlich für Positionsprüfung und ggf. Ausrichtung)
             Rectangle screen = Screen.PrimaryScreen.WorkingArea;
 
-            // prüfen, ob Fenster in der Liste vorhanden ist
             int index = ContainsLike(formsCollection, form.Name);
             if (index >= 0)
             {
-                // String aufsplitten in Name|Left|Top|Width|Height
                 string[] values = formsCollection[index].Split('|');
 
                 if (values.Length < 5)
                     return FormOperationResult.ValuesCorrupt;
 
-
-                // Fensterposition zuweisem
                 int.TryParse(values[1], out int tempValue);
                 form.Left = tempValue;
                 int.TryParse(values[2], out tempValue);
                 form.Top = tempValue;
 
-                // Fenstergröße nur bei Fenstern mit erlaubter Größenänderung zuweisen
                 switch (form.FormBorderStyle)
                 {
                     case FormBorderStyle.Sizable:
@@ -182,8 +165,6 @@ namespace TaskBarRenamer
                         break;
                 }
 
-                // prüfen, ob Fensterposition innerhalb des sichtbaren Bereiches liegt
-                // korrigieren, falls Fensterposition außerhalb des sichtbaren Bereiches
                 if (form.Left < 0)
                     form.Left = 0;
                 if (form.Left + form.Width > screen.Width)
@@ -195,16 +176,13 @@ namespace TaskBarRenamer
 
                 return FormOperationResult.Successful;
             }
-            // falls Fenster nicht in der Liste vorhanden
             else
             {
-                // falls übergeordnetes Fenster existiert, daran zentriert ausrichten
                 if (form.Owner != null)
                 {
                     form.Left = form.Owner.Left + ((form.Owner.Width / 2) - (form.Width / 2));
                     form.Top = form.Owner.Top + ((form.Owner.Height / 2) - (form.Height / 2));
                 }
-                // andernfalls am Bildschirmzentrum ausrichten
                 else
                 {
                     form.Left = (screen.Width / 2) - (form.Width / 2);
@@ -212,11 +190,9 @@ namespace TaskBarRenamer
                 }
             }
 
-            // falls Fenster nicht in der Liste vorhanden ist
             return FormOperationResult.NoEntryFound;
         }
 
-        // Web
         private static string GetDefaultBrowser()
         {
             const string fileExtension = ".exe";
@@ -231,7 +207,6 @@ namespace TaskBarRenamer
                 browser = key.GetValue(null).ToString().ToLower().Replace("\"", string.Empty);
                 if (!browser.EndsWith(fileExtension))
                 {
-                    // get rid of everything after the file extension
                     browser = browser.Substring(0, browser.LastIndexOf(fileExtension) + fileExtension.Length);
                 }
             }
