@@ -193,49 +193,14 @@ namespace TaskBarRenamer
             return FormOperationResult.NoEntryFound;
         }
 
-        private static string GetDefaultBrowser()
-        {
-            const string fileExtension = ".exe";
-
-            string browser = string.Empty;
-            RegistryKey key = null;
-
-            try
-            {
-                key = Registry.ClassesRoot.OpenSubKey(@"HTTP\shell\open\command", false);
-
-                browser = key.GetValue(null).ToString().ToLower().Replace("\"", string.Empty);
-                if (!browser.EndsWith(fileExtension))
-                {
-                    browser = browser.Substring(0, browser.LastIndexOf(fileExtension) + fileExtension.Length);
-                }
-            }
-            finally
-            {
-                key?.Close();
-            }
-
-            return browser;
-        }
-
         public static bool OpenWebsite(string websiteLink)
         {
             if (string.IsNullOrEmpty(websiteLink))
                 return false;
 
-            string defaultBrowser = GetDefaultBrowser();
-            if (!File.Exists(defaultBrowser))
-                return false;
-
             try
             {
-                using (Process p = new Process())
-                {
-                    p.StartInfo.FileName = defaultBrowser;
-                    p.StartInfo.Arguments = websiteLink;
-                    p.Start();
-                }
-
+                Process.Start(websiteLink);
                 return true;
             }
             catch
