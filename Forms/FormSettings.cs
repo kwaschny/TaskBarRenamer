@@ -7,8 +7,7 @@ namespace TaskBarRenamer
 
     public enum SettingCategory
     {
-        Refresh = 0,
-        Update = 1,
+        Refresh = 0
     }
 
     #endregion

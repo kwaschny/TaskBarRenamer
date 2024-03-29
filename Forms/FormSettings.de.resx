@@ -169,20 +169,6 @@
   <data name="tabPageRefresh.Text" xml:space="preserve">
     <value>Aktualisierung</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 26</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Dieses Programm wird keine
-Updates mehr erhalten.</value>
-  </data>
-  <data name="checkBoxUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 30</value>
-  </data>
-  <data name="checkBoxUpdate.Text" xml:space="preserve">
-    <value>regelmäßig auf Updates prüfen
-(erfordert eine Internet-Verbindung)</value>
-  </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Abbrechen</value>
   </data>

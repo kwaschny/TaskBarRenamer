@@ -27,23 +27,18 @@
             this.numericUpDownRefreshEvery = new TaskBarRenamer.NumericUpDownFixed();
             this.checkBoxForegroundOnly = new System.Windows.Forms.CheckBox();
             this.checkBoxAutoRefresh = new System.Windows.Forms.CheckBox();
-            this.tabPageUpdate = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkBoxUpdate = new System.Windows.Forms.CheckBox();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.tabControlSettings.SuspendLayout();
             this.tabPageRefresh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownForceNamesEvery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRefreshEvery)).BeginInit();
-            this.tabPageUpdate.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlSettings
             // 
             resources.ApplyResources(this.tabControlSettings, "tabControlSettings");
             this.tabControlSettings.Controls.Add(this.tabPageRefresh);
-            this.tabControlSettings.Controls.Add(this.tabPageUpdate);
             this.tabControlSettings.Name = "tabControlSettings";
             this.tabControlSettings.SelectedIndex = 0;
             // 
@@ -141,28 +136,6 @@
             this.checkBoxAutoRefresh.UseVisualStyleBackColor = true;
             this.checkBoxAutoRefresh.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
             // 
-            // tabPageUpdate
-            // 
-            resources.ApplyResources(this.tabPageUpdate, "tabPageUpdate");
-            this.tabPageUpdate.Controls.Add(this.label1);
-            this.tabPageUpdate.Controls.Add(this.checkBoxUpdate);
-            this.tabPageUpdate.Name = "tabPageUpdate";
-            this.tabPageUpdate.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Name = "label1";
-            // 
-            // checkBoxUpdate
-            // 
-            resources.ApplyResources(this.checkBoxUpdate, "checkBoxUpdate");
-            this.checkBoxUpdate.Checked = global::TaskBarRenamer.Properties.Settings.Default.CheckForUpdate;
-            this.checkBoxUpdate.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::TaskBarRenamer.Properties.Settings.Default, "CheckForUpdate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBoxUpdate.Name = "checkBoxUpdate";
-            this.checkBoxUpdate.UseVisualStyleBackColor = true;
-            // 
             // buttonOK
             // 
             resources.ApplyResources(this.buttonOK, "buttonOK");
@@ -198,8 +171,6 @@
             this.tabPageRefresh.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownForceNamesEvery)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRefreshEvery)).EndInit();
-            this.tabPageUpdate.ResumeLayout(false);
-            this.tabPageUpdate.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -217,9 +188,6 @@
         private System.Windows.Forms.CheckBox checkBoxAutoRefresh;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.TabPage tabPageUpdate;
-        private System.Windows.Forms.CheckBox checkBoxUpdate;
-        private System.Windows.Forms.Label label1;
 
     }
 }

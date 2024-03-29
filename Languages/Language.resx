@@ -129,24 +129,12 @@
     <value>Type in the new name of the window:</value>
     <comment>formTextInput</comment>
   </data>
-  <data name="NewUpdate" xml:space="preserve">
-    <value>A new version of TaskBarRenamer is available. Do you want to download it now?</value>
-    <comment>formMain</comment>
-  </data>
   <data name="NotContainSemicolon" xml:space="preserve">
     <value>The name must not contain any semicolon.</value>
     <comment>formAutomatic</comment>
   </data>
-  <data name="NoUpdate" xml:space="preserve">
-    <value>TaskBarRenamer is up-to-date. There are no new updates available.</value>
-    <comment>formMain</comment>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>Search...</value>
-    <comment>formMain</comment>
-  </data>
-  <data name="UpdateRunning" xml:space="preserve">
-    <value>TaskBarRenamer is already checking for updates. Please wait...</value>
     <comment>formMain</comment>
   </data>
   <data name="WebsiteError" xml:space="preserve">

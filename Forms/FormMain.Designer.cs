@@ -26,11 +26,9 @@
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSettings = new System.Windows.Forms.ToolStripSeparator();
             this.initialForceNamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemHelp = new System.Windows.Forms.ToolStripSeparator();
             this.websiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +66,6 @@
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerForceNames = new System.Windows.Forms.Timer(this.components);
             this.timerAutoRefresh = new System.Windows.Forms.Timer(this.components);
-            this.updater = new System.ComponentModel.BackgroundWorker();
             this.menuStripMain.SuspendLayout();
             this.contextMenuStripWindows.SuspendLayout();
             this.contextMenuStripTray.SuspendLayout();
@@ -134,7 +131,6 @@
             resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshSettingsToolStripMenuItem,
-            this.updateToolStripMenuItem1,
             this.toolStripMenuItemSettings,
             this.initialForceNamesToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
@@ -144,12 +140,6 @@
             resources.ApplyResources(this.refreshSettingsToolStripMenuItem, "refreshSettingsToolStripMenuItem");
             this.refreshSettingsToolStripMenuItem.Name = "refreshSettingsToolStripMenuItem";
             this.refreshSettingsToolStripMenuItem.Click += new System.EventHandler(this.RefreshSettings_Click);
-            // 
-            // updateToolStripMenuItem1
-            // 
-            resources.ApplyResources(this.updateToolStripMenuItem1, "updateToolStripMenuItem1");
-            this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
-            this.updateToolStripMenuItem1.Click += new System.EventHandler(this.UpdateSettings_Click);
             // 
             // toolStripMenuItemSettings
             // 
@@ -166,17 +156,10 @@
             // 
             resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateToolStripMenuItem,
             this.toolStripMenuItemHelp,
             this.websiteToolStripMenuItem,
             this.versionToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            // 
-            // updateToolStripMenuItem
-            // 
-            resources.ApplyResources(this.updateToolStripMenuItem, "updateToolStripMenuItem");
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.Update_Click);
             // 
             // toolStripMenuItemHelp
             // 
@@ -440,11 +423,6 @@
             this.timerAutoRefresh.Interval = 5000;
             this.timerAutoRefresh.Tick += new System.EventHandler(this.AutoRefresh_Tick);
             // 
-            // updater
-            // 
-            this.updater.DoWork += new System.ComponentModel.DoWorkEventHandler(this.Updater_DoWork);
-            this.updater.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.Updater_RunWorkerCompleted);
-            // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
@@ -523,9 +501,6 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showWindowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
-        private System.ComponentModel.BackgroundWorker updater;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem1;
     }
 }
 

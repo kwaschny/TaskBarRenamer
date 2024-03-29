@@ -157,9 +157,6 @@
   <data name="refreshSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Aktualisierung...</value>
   </data>
-  <data name="updateToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 22</value>
-  </data>
   <data name="toolStripMenuItemSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 6</value>
   </data>

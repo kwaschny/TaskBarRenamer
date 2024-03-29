@@ -23,8 +23,6 @@ namespace TaskBarRenamer
         // string => FromName
         private readonly Dictionary<string, AutomaticEntry> automaticEntries = new Dictionary<string, AutomaticEntry>();
 
-        private bool updateCheckDone = false;
-
         private ListView CurrentListView
         {
             get
@@ -401,14 +399,6 @@ namespace TaskBarRenamer
             listView.EndUpdate();
         }
 
-        private void CheckForUpdate()
-        {
-            if (updater.IsBusy)
-                MessageBox.Show(Language.UpdateRunning, "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                updater.RunWorkerAsync();
-        }
-
         public FormMain()
         {
             InitializeComponent();
@@ -441,16 +431,6 @@ namespace TaskBarRenamer
             FormSettings form = new FormSettings(SettingCategory.Refresh);
             if (form.ShowDialog(this) == DialogResult.OK)
                 RefreshIntervals();
-        }
-        private void UpdateSettings_Click(object sender, EventArgs e)
-        {
-            FormSettings form = new FormSettings(SettingCategory.Update);
-            if (form.ShowDialog(this) == DialogResult.OK)
-                RefreshIntervals();
-        }
-        private void Update_Click(object sender, EventArgs e)
-        {
-            CheckForUpdate();
         }
         private void Website_Click(object sender, EventArgs e)
         {
@@ -653,63 +633,6 @@ namespace TaskBarRenamer
 
                 RenameWindow((int)window.Handle, window.NewName, window.ForceName);
             }
-        }
-
-        private void Updater_DoWork(object sender, DoWorkEventArgs e)
-        {
-            string downloadLink = string.Empty;
-
-            try
-            {
-                using (WebClient web = new WebClient())
-                {
-                    string xmlFile = web.DownloadString(Program.Website + "software/tools/update.xml");
-
-                    XmlDocument doc = new XmlDocument();
-                    doc.LoadXml(xmlFile);
-
-                    XmlNode appNode = doc.SelectSingleNode("/Kwaschny/Software/Tools/" + Application.ProductName);
-                    if (appNode != null)
-                    {
-                        XmlNode tempNode = appNode["Version"];
-                        if (tempNode != null)
-                            if (Application.ProductVersion.Equals(tempNode.InnerText))
-                            {
-                            }
-                            else
-                            {
-                                tempNode = appNode["Download"];
-                                if (tempNode != null)
-                                    downloadLink = tempNode.InnerText;
-                            }
-                    }
-                }
-            }
-            catch { }
-            finally
-            {
-                e.Result = downloadLink;
-            }
-        }
-        private void Updater_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            string resultLink = string.Empty;
-            if (e.Result != null)
-                resultLink = e.Result.ToString();
-
-            if (!string.IsNullOrEmpty(resultLink))
-            {
-                if (MessageBox.Show(this, Language.NewUpdate, "Update", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) == DialogResult.Yes)
-                    if (!Program.OpenWebsite(resultLink))
-                        MessageBox.Show(this, Language.UpdateRunning + "\n\n" + resultLink, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (updateCheckDone)
-                    MessageBox.Show(this, Language.NoUpdate, "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            updateCheckDone = true;
         }
 
         private void Form_Resize(object sender, EventArgs e)

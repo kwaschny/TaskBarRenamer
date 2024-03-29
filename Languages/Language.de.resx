@@ -129,24 +129,12 @@
     <value>Geben Sie den neuen Name des Fensters an:</value>
     <comment>formTextInput</comment>
   </data>
-  <data name="NewUpdate" xml:space="preserve">
-    <value>Eine neue Version von TaskBarRenamer ist verfügbar. Möchten Sie diese jetzt herunterladen?</value>
-    <comment>formMain</comment>
-  </data>
   <data name="NotContainSemicolon" xml:space="preserve">
     <value>Der Name darf kein Semikolon beinhalten.</value>
     <comment>formAutomatic</comment>
   </data>
-  <data name="NoUpdate" xml:space="preserve">
-    <value>TaskBarRenamer ist auf dem aktuellsten Stand. Es stehen keine Updates zur Verfügung.</value>
-    <comment>formMain</comment>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>Suchen...</value>
-    <comment>formMain</comment>
-  </data>
-  <data name="UpdateRunning" xml:space="preserve">
-    <value>TaskBarRenamer prüft bereits auf Updates. Bitte warten...</value>
     <comment>formMain</comment>
   </data>
   <data name="WebsiteError" xml:space="preserve">

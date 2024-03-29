@@ -145,10 +145,10 @@
   <data name="showWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
   </data>
-  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 388</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="menuStripMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -158,11 +158,14 @@
   <data name="closeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
   </data>
+  <data name="&gt;&gt;listViewAutomatic.Name" xml:space="preserve">
+    <value>listViewAutomatic</value>
+  </data>
   <data name="renameToolStripMenuItem.Text" xml:space="preserve">
     <value>Rename...</value>
   </data>
-  <data name="&gt;&gt;buttonRemove.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;buttonEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="showToolStripMenuItem.Text" xml:space="preserve">
     <value>Show</value>
@@ -176,15 +179,12 @@
   <data name="textBoxSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 21</value>
   </data>
-  <data name="updateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 22</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabControlMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="contextMenuStripAutomatic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 70</value>
+  <data name="columnHeaderOriginal.Width" type="System.Int32, mscorlib">
+    <value>128</value>
   </data>
   <data name="&gt;&gt;buttonEdit.Name" xml:space="preserve">
     <value>buttonEdit</value>
@@ -192,14 +192,11 @@
   <data name="&gt;&gt;refreshSettingsToolStripMenuItem.Name" xml:space="preserve">
     <value>refreshSettingsToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;listViewAutomatic.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="addToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 22</value>
   </data>
   <data name="&gt;&gt;textBoxSearch.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;updateToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tabControlMain.Name" xml:space="preserve">
     <value>tabControlMain</value>
@@ -210,8 +207,11 @@
   <data name="&gt;&gt;tabPageRenamed.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;columnHeaderFrom.Name" xml:space="preserve">
+    <value>columnHeaderFrom</value>
+  </data>
   <data name="initialForceNamesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="columnHeaderTo.Width" type="System.Int32, mscorlib">
     <value>128</value>
@@ -267,8 +267,8 @@
   <data name="&gt;&gt;toolStripMenuItemWindows.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="columnHeaderOriginal.Width" type="System.Int32, mscorlib">
-    <value>128</value>
+  <data name="buttonRemove.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="addToolStripMenuItem.Text" xml:space="preserve">
     <value>Add...</value>
@@ -279,8 +279,8 @@
   <data name="tabPageWindows.Text" xml:space="preserve">
     <value>Windows</value>
   </data>
-  <data name="updateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Update</value>
+  <data name="&gt;&gt;textBoxSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="showToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
@@ -297,14 +297,11 @@
   <data name="&gt;&gt;initialForceNamesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="addToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormMain</value>
   </data>
   <data name="columnHeaderFrom.Width" type="System.Int32, mscorlib">
     <value>128</value>
-  </data>
-  <data name="&gt;&gt;updateToolStripMenuItem1.Name" xml:space="preserve">
-    <value>updateToolStripMenuItem1</value>
   </data>
   <data name="menuStripMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -913,10 +910,10 @@
     <value>restoreToolStripMenuItem</value>
   </data>
   <data name="refreshSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 22</value>
+    <value>180, 22</value>
   </data>
-  <data name="&gt;&gt;listViewAutomatic.Name" xml:space="preserve">
-    <value>listViewAutomatic</value>
+  <data name="&gt;&gt;buttonAdd.Parent" xml:space="preserve">
+    <value>tabPageAutomatic</value>
   </data>
   <data name="&gt;&gt;listViewWindows.Name" xml:space="preserve">
     <value>listViewWindows</value>
@@ -926,9 +923,6 @@
   </data>
   <data name="tabPageWindows.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="updateToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>
@@ -978,9 +972,6 @@
   <data name="&gt;&gt;listViewAutomatic.Parent" xml:space="preserve">
     <value>tabPageAutomatic</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FormMain</value>
-  </data>
   <data name="&gt;&gt;menuStripMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -993,9 +984,6 @@
   <data name="tabPageAutomatic.Text" xml:space="preserve">
     <value>Automatic</value>
   </data>
-  <data name="&gt;&gt;tabPageAutomatic.Parent" xml:space="preserve">
-    <value>tabControlMain</value>
-  </data>
   <data name="listViewWindows.Size" type="System.Drawing.Size, System.Drawing">
     <value>290, 356</value>
   </data>
@@ -1004,9 +992,6 @@
   </data>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 20</value>
-  </data>
-  <data name="&gt;&gt;restoreToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tabControlMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1018,7 +1003,7 @@
     <value>90, 23</value>
   </data>
   <data name="toolStripMenuItemSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="toolStripMenuItemHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 6</value>
@@ -1031,9 +1016,6 @@
   </data>
   <data name="removeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 22</value>
-  </data>
-  <data name="buttonRemove.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 22</value>
@@ -1083,17 +1065,14 @@
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>320, 240</value>
   </data>
-  <data name="&gt;&gt;columnHeaderFrom.Name" xml:space="preserve">
-    <value>columnHeaderFrom</value>
+  <data name="&gt;&gt;tabPageAutomatic.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="refreshSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Refresh...</value>
   </data>
   <data name="&gt;&gt;tabPageRenamed.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tabPageRenamed.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -1116,8 +1095,11 @@
   <data name="&gt;&gt;tabControlMain.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;buttonAdd.Parent" xml:space="preserve">
-    <value>tabPageAutomatic</value>
+  <data name="&gt;&gt;listViewWindows.Parent" xml:space="preserve">
+    <value>tabPageWindows</value>
+  </data>
+  <data name="&gt;&gt;restoreToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="websiteToolStripMenuItem.Text" xml:space="preserve">
     <value>Website</value>
@@ -1173,8 +1155,8 @@
   <data name="closeToolStripMenuItem.Text" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="&gt;&gt;tabPageAutomatic.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;tabPageAutomatic.Parent" xml:space="preserve">
+    <value>tabControlMain</value>
   </data>
   <data name="listViewRenamed.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1203,6 +1185,9 @@
   <data name="tabPageRenamed.Size" type="System.Drawing.Size, System.Drawing">
     <value>296, 362</value>
   </data>
+  <data name="&gt;&gt;contextMenuStripWindows.Name" xml:space="preserve">
+    <value>contextMenuStripWindows</value>
+  </data>
   <data name="listViewRenamed.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
@@ -1220,18 +1205,6 @@
   </data>
   <data name="&gt;&gt;contextMenuStripTray.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="updateToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 22</value>
-  </data>
-  <data name="&gt;&gt;updater.Name" xml:space="preserve">
-    <value>updater</value>
-  </data>
-  <data name="&gt;&gt;columnHeaderTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="buttonRemove.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 13</value>
@@ -1890,9 +1863,6 @@
   <data name="columnHeader.Width" type="System.Int32, mscorlib">
     <value>256</value>
   </data>
-  <data name="&gt;&gt;updater.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
   </data>
@@ -1911,9 +1881,6 @@
   <data name="&gt;&gt;textBoxSearch.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="updateToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Update...</value>
-  </data>
   <data name="&gt;&gt;removeToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1923,14 +1890,14 @@
   <data name="textBoxSearch.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;buttonEdit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;showToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;listViewWindows.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="contextMenuStripAutomatic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 70</value>
   </data>
   <data name="tabPageAutomatic.Size" type="System.Drawing.Size, System.Drawing">
     <value>296, 362</value>
@@ -1938,8 +1905,8 @@
   <data name="columnHeaderOriginal.Text" xml:space="preserve">
     <value>Original</value>
   </data>
-  <data name="&gt;&gt;listViewWindows.Parent" xml:space="preserve">
-    <value>tabPageWindows</value>
+  <data name="listViewAutomatic.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="&gt;&gt;listViewRenamed.Name" xml:space="preserve">
     <value>listViewRenamed</value>
@@ -1947,11 +1914,11 @@
   <data name="&gt;&gt;exitToolStripMenuItem1.Name" xml:space="preserve">
     <value>exitToolStripMenuItem1</value>
   </data>
+  <data name="&gt;&gt;buttonRemove.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;notifyIconMain.Name" xml:space="preserve">
     <value>notifyIconMain</value>
-  </data>
-  <data name="&gt;&gt;updateToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;renameToolStripMenuItem.Name" xml:space="preserve">
     <value>renameToolStripMenuItem</value>
@@ -1959,8 +1926,8 @@
   <data name="&gt;&gt;imageListSmallIcons.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;contextMenuStripWindows.Name" xml:space="preserve">
-    <value>contextMenuStripWindows</value>
+  <data name="tabPageRenamed.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="versionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 22</value>
@@ -1971,8 +1938,8 @@
   <data name="&gt;&gt;contextMenuStripAutomatic.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="buttonAdd.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 388</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 6</value>
@@ -1980,14 +1947,11 @@
   <data name="&gt;&gt;toolStripMenuItemHelp.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="listViewAutomatic.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="&gt;&gt;columnHeaderTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tabControlMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 54</value>
-  </data>
-  <data name="&gt;&gt;updateToolStripMenuItem.Name" xml:space="preserve">
-    <value>updateToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;viewToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2016,6 +1980,9 @@
   <data name="listViewRenamed.Size" type="System.Drawing.Size, System.Drawing">
     <value>290, 356</value>
   </data>
+  <data name="&gt;&gt;listViewAutomatic.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="&gt;&gt;versionToolStripMenuItem.Name" xml:space="preserve">
     <value>versionToolStripMenuItem</value>
   </data>
@@ -2039,9 +2006,6 @@
   </data>
   <metadata name="contextMenuStripAutomatic.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>512, 17</value>
-  </metadata>
-  <metadata name="updater.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>165, 54</value>
   </metadata>
   <metadata name="timerForceNames.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 54</value>
