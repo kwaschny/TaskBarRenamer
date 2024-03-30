@@ -14,13 +14,13 @@ namespace TaskBarRenamer
     {
         #region Fields
 
-        // int => Handle
+        // int => TaskBarWindow.Handle
         private readonly Dictionary<int, TaskBarWindow> taskBarWindows = new Dictionary<int, TaskBarWindow>();
 
-        // int => Handle
+        // int => TaskBarWindow.Handle
         private readonly Dictionary<int, TaskBarWindow> lastRenames = new Dictionary<int, TaskBarWindow>();
 
-        // string => FromName
+        // string => AutomaticEntry.From
         private readonly Dictionary<string, AutomaticEntry> automaticEntries = new Dictionary<string, AutomaticEntry>();
 
         private ListView CurrentListView
@@ -171,13 +171,19 @@ namespace TaskBarRenamer
                 if (lastRenames.ContainsKey((int)window.Handle))
                     taskBarWindow.SetPredecessor(lastRenames[(int)window.Handle]);
 
-                string container = string.Empty;
-                if (automaticEntries.ContainsKey(window.Text))
-                    container = window.Text;
-                else if (automaticEntries.ContainsKey(window.ClassName))
-                    container = window.ClassName;
-                if (!string.IsNullOrEmpty(container))
-                    RenameWindow((int)window.Handle, automaticEntries[container].ToName, automaticEntries[container].ForceName);
+                foreach (AutomaticEntry entry in automaticEntries.Values)
+                {
+                    if (entry.Matches(window.Text))
+                    {
+                        RenameWindow((int)window.Handle, entry.Rename(window.Text), entry.ForceName);
+                        break;
+                    }
+                    if (entry.Matches(window.ClassName))
+                    {
+                        RenameWindow((int)window.Handle, entry.Rename(window.ClassName), entry.ForceName);
+                        break;
+                    }
+                }
 
                 if (!string.IsNullOrEmpty(searchText))
                 {
@@ -253,15 +259,17 @@ namespace TaskBarRenamer
 
         private void AddAutomatic(string renameThis, string toThis, bool forceName)
         {
-            if (automaticEntries.ContainsKey(renameThis))
-                automaticEntries.Remove(renameThis);
+            AutomaticEntry entry = new AutomaticEntry(renameThis, toThis, forceName);
 
-            automaticEntries.Add(renameThis, new AutomaticEntry(renameThis, toThis, forceName));
+            if (automaticEntries.ContainsKey(entry.From))
+                automaticEntries.Remove(entry.From);
+
+            automaticEntries.Add(entry.From, entry);
         }
-        private void RemoveAutomatic(string renameThis)
+        private void RemoveAutomatic(AutomaticEntry entry)
         {
-            if (automaticEntries.ContainsKey(renameThis))
-                automaticEntries.Remove(renameThis);
+            if (automaticEntries.ContainsKey(entry.From))
+                automaticEntries.Remove(entry.From);
         }
         private void ShowAutomaticEntries(string searchText)
         {
@@ -527,7 +535,7 @@ namespace TaskBarRenamer
 
                 AutomaticEntry entry = (AutomaticEntry)item.Tag;
 
-                FormAutomatic form = new FormAutomatic(entry.FromName, entry.ToName, entry.ForceName);
+                FormAutomatic form = new FormAutomatic(entry);
                 if (form.ShowDialog(this) == DialogResult.OK)
                     AddAutomatic(form.RenameThis, form.ToThis, form.ForceName);
             }
@@ -538,7 +546,7 @@ namespace TaskBarRenamer
         {
             foreach (ListViewItem item in listViewAutomatic.SelectedItems)
             {
-                RemoveAutomatic(item.Text);
+                RemoveAutomatic(item.Tag as AutomaticEntry);
             }
 
             RefreshList();
@@ -678,8 +686,10 @@ namespace TaskBarRenamer
 
                 bool.TryParse(values[2], out bool result);
 
-                if (!automaticEntries.ContainsKey(values[0]))
-                    automaticEntries.Add(values[0], new AutomaticEntry(values[0], values[1], result));
+                if (automaticEntries.ContainsKey(values[0]))
+                    continue;
+
+                automaticEntries.Add(values[0], new AutomaticEntry(values[0], values[1], result));
             }
 
             Program.LoadForm(this, Properties.Settings.Default.Forms);
@@ -706,7 +716,7 @@ namespace TaskBarRenamer
 
             Properties.Settings.Default.Automatic.Clear();
             foreach (AutomaticEntry entry in automaticEntries.Values)
-                Properties.Settings.Default.Automatic.Add(string.Format("{0};{1};{2}", entry.FromName, entry.ToName, entry.ForceName));
+                Properties.Settings.Default.Automatic.Add(string.Format("{0};{1};{2}", entry.From, entry.ToName, entry.ForceName));
 
             Program.SaveForm(this, Properties.Settings.Default.Forms);
             Properties.Settings.Default.ListAllWindows = listAllWindowsToolStripMenuItem.Checked;

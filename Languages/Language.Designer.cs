@@ -88,11 +88,38 @@ namespace TaskBarRenamer.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The regular expression is invalid..
+        /// </summary>
+        internal static string InvalidRegExp {
+            get {
+                return ResourceManager.GetString("InvalidRegExp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The wildcard pattern is invalid..
+        /// </summary>
+        internal static string InvalidWildcard {
+            get {
+                return ResourceManager.GetString("InvalidWildcard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The name must not contain any semicolon..
         /// </summary>
         internal static string NotContainSemicolon {
             get {
                 return ResourceManager.GetString("NotContainSemicolon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to \1 - \9 to backreference captures.
+        /// </summary>
+        internal static string RegExpHint {
+            get {
+                return ResourceManager.GetString("RegExpHint", resourceCulture);
             }
         }
         
@@ -111,6 +138,15 @@ namespace TaskBarRenamer.Languages {
         internal static string WebsiteError {
             get {
                 return ResourceManager.GetString("WebsiteError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ? = any single character, * = any number of characters.
+        /// </summary>
+        internal static string WildcardHint {
+            get {
+                return ResourceManager.GetString("WildcardHint", resourceCulture);
             }
         }
     }

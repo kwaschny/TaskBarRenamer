@@ -129,8 +129,20 @@
     <value>Geben Sie den neuen Name des Fensters an:</value>
     <comment>formTextInput</comment>
   </data>
+  <data name="InvalidRegExp" xml:space="preserve">
+    <value>Der reguläre Ausdruck ist ungültig.</value>
+    <comment>formAutomatic</comment>
+  </data>
+  <data name="InvalidWildcard" xml:space="preserve">
+    <value>Der Platzhalter-Ausdruck ist ungültig.</value>
+    <comment>formAutomatic</comment>
+  </data>
   <data name="NotContainSemicolon" xml:space="preserve">
     <value>Der Name darf kein Semikolon beinhalten.</value>
+    <comment>formAutomatic</comment>
+  </data>
+  <data name="RegExpHint" xml:space="preserve">
+    <value>\1 - \9 für Rückverweise</value>
     <comment>formAutomatic</comment>
   </data>
   <data name="Search" xml:space="preserve">
@@ -140,5 +152,9 @@
   <data name="WebsiteError" xml:space="preserve">
     <value>Beim Aufrufen der Website ist ein Fehler aufgetreten. Ihr Standard-Web-Browser ist möglicherweise nicht festgelegt. Versuchen Sie die Website unter folgendem Link manuell zu öffnen:</value>
     <comment>formMain</comment>
+  </data>
+  <data name="WildcardHint" xml:space="preserve">
+    <value>? = beliebiger Buchstabe, * = beliebige Anzahl Buchstaben</value>
+    <comment>formAutomatic</comment>
   </data>
 </root>

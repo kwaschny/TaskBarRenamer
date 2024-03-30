@@ -129,8 +129,20 @@
     <value>Type in the new name of the window:</value>
     <comment>formTextInput</comment>
   </data>
+  <data name="InvalidRegExp" xml:space="preserve">
+    <value>The regular expression is invalid.</value>
+    <comment>formAutomatic</comment>
+  </data>
+  <data name="InvalidWildcard" xml:space="preserve">
+    <value>The wildcard pattern is invalid.</value>
+    <comment>formAutomatic</comment>
+  </data>
   <data name="NotContainSemicolon" xml:space="preserve">
     <value>The name must not contain any semicolon.</value>
+    <comment>formAutomatic</comment>
+  </data>
+  <data name="RegExpHint" xml:space="preserve">
+    <value>\1 - \9 to backreference captures</value>
     <comment>formAutomatic</comment>
   </data>
   <data name="Search" xml:space="preserve">
@@ -140,5 +152,9 @@
   <data name="WebsiteError" xml:space="preserve">
     <value>An error occurred while trying to open the website. Your default web browser might not be set. Try to open the website manually with the following link:</value>
     <comment>formMain</comment>
+  </data>
+  <data name="WildcardHint" xml:space="preserve">
+    <value>? = any single character, * = any number of characters</value>
+    <comment>formAutomatic</comment>
   </data>
 </root>

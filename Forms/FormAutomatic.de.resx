@@ -117,25 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonOK.Error" xml:space="preserve">
-    <value />
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonOK.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonOK.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="checkBoxForceName.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="checkBoxForceName.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="checkBoxForceName.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="radioButtonExact.Text" xml:space="preserve">
+    <value>Exakt</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="checkBoxForceName.Size" type="System.Drawing.Size, System.Drawing">
@@ -144,62 +127,17 @@
   <data name="checkBoxForceName.Text" xml:space="preserve">
     <value>Name erzwingen</value>
   </data>
-  <data name="labelTo.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="labelTo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="labelTo.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="labelTo.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 13</value>
   </data>
   <data name="labelTo.Text" xml:space="preserve">
     <value>zu diesem</value>
   </data>
-  <data name="textBoxTo.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxTo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="textBoxTo.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="labelFrom.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="labelFrom.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="labelFrom.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="labelFrom.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 13</value>
   </data>
   <data name="labelFrom.Text" xml:space="preserve">
     <value>Umbenennen von</value>
-  </data>
-  <data name="textBoxFrom.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxFrom.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="textBoxFrom.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="buttonCancel.Error" xml:space="preserve">
-    <value />
-  </data>
-  <data name="buttonCancel.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleRight</value>
-  </data>
-  <data name="buttonCancel.IconPadding" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Abbrechen</value>
