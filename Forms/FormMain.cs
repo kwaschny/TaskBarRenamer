@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Xml;
 using TaskBarRenamer.Languages;
 
 namespace TaskBarRenamer
@@ -537,7 +535,10 @@ namespace TaskBarRenamer
 
                 FormAutomatic form = new FormAutomatic(entry);
                 if (form.ShowDialog(this) == DialogResult.OK)
+                {
+                    RemoveAutomatic(entry);
                     AddAutomatic(form.RenameThis, form.ToThis, form.ForceName);
+                }
             }
 
             RefreshList();
@@ -550,6 +551,45 @@ namespace TaskBarRenamer
             }
 
             RefreshList();
+        }
+
+        private void buttonMoveUp_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listViewAutomatic.SelectedItems)
+            {
+                int newIndex = (item.Index - 1);
+                if (newIndex >= 0)
+                {
+                    listViewAutomatic.Items.RemoveAt(item.Index);
+                    listViewAutomatic.Items.Insert(newIndex, item);
+                }
+            }
+
+            SyncAutomaticOrder();
+        }
+
+        private void buttonMoveDown_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listViewAutomatic.SelectedItems)
+            {
+                int newIndex = (item.Index + 1);
+                if (newIndex < listViewAutomatic.Items.Count)
+                {
+                    listViewAutomatic.Items.RemoveAt(item.Index);
+                    listViewAutomatic.Items.Insert(newIndex, item);
+                }
+            }
+
+            SyncAutomaticOrder();
+        }
+        private void SyncAutomaticOrder()
+        {
+            automaticEntries.Clear();
+            foreach (ListViewItem item in listViewAutomatic.Items)
+            {
+                AutomaticEntry entry = (item.Tag as AutomaticEntry);
+                automaticEntries.Add(entry.From, entry);
+            }
         }
 
         private void Form_KeyDown(object sender, KeyEventArgs e)
@@ -618,9 +658,11 @@ namespace TaskBarRenamer
 
         private void Automatic_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bool selected = (listViewAutomatic.SelectedItems.Count > 0);
-            buttonEdit.Enabled = selected;
-            buttonRemove.Enabled = selected;
+            int selectedItems = listViewAutomatic.SelectedItems.Count;
+            buttonEdit.Enabled = (selectedItems == 1);
+            buttonRemove.Enabled = (selectedItems > 0);
+            buttonMoveUp.Enabled = ((selectedItems == 1) && listViewAutomatic.SelectedItems[0].Index > 0);
+            buttonMoveDown.Enabled = ((selectedItems == 1) && listViewAutomatic.SelectedItems[0].Index < (listViewAutomatic.Items.Count - 1));
         }
 
         private void AutoRefresh_Tick(object sender, EventArgs e)

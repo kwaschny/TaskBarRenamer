@@ -119,8 +119,8 @@ namespace TaskBarRenamer
             set;
         }
 
-        private Regex wildcard;
-        private Regex regexp;
+        private readonly Regex wildcard;
+        private readonly Regex regexp;
 
         #endregion
 

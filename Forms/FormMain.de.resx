@@ -118,17 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
-  </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Beenden</value>
-  </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>Datei</value>
+  </data>
+  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 20</value>
+  </data>
+  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ansicht</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 20</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Beenden</value>
   </data>
   <data name="listAllWindowsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 22</value>
@@ -145,12 +160,6 @@
   <data name="refreshToolStripMenuItem.Text" xml:space="preserve">
     <value>Aktualisieren</value>
   </data>
-  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
-  </data>
-  <data name="viewToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ansicht</value>
-  </data>
   <data name="refreshSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 22</value>
   </data>
@@ -166,17 +175,11 @@
   <data name="initialForceNamesToolStripMenuItem.Text" xml:space="preserve">
     <value>Name erzwingen vorselektieren</value>
   </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 20</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Einstellungen</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Hilfe</value>
-  </data>
   <data name="columnHeader.Text" xml:space="preserve">
     <value>Fenster</value>
+  </data>
+  <data name="contextMenuStripWindows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 98</value>
   </data>
   <data name="renameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 22</value>
@@ -205,26 +208,8 @@
   <data name="closeToolStripMenuItem.Text" xml:space="preserve">
     <value>Schließen</value>
   </data>
-  <data name="contextMenuStripWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 98</value>
-  </data>
   <data name="textBoxSearch.Text" xml:space="preserve">
     <value>Suchen...</value>
-  </data>
-  <data name="showToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="showToolStripMenuItem.Text" xml:space="preserve">
-    <value>Anzeigen</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 6</value>
-  </data>
-  <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Beenden</value>
   </data>
   <data name="contextMenuStripTray.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 54</value>
@@ -808,29 +793,50 @@
         AAA///////AAAP//////8DAD///////5////////////////////////////////////////
 </value>
   </data>
+  <data name="showToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="showToolStripMenuItem.Text" xml:space="preserve">
+    <value>Anzeigen</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 6</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Beenden</value>
+  </data>
   <data name="tabPageWindows.Text" xml:space="preserve">
     <value>Fenster</value>
-  </data>
-  <data name="columnHeaderNew.Text" xml:space="preserve">
-    <value>Neu</value>
   </data>
   <data name="tabPageRenamed.Text" xml:space="preserve">
     <value>Umbenannt</value>
   </data>
+  <data name="columnHeaderNew.Text" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="tabPageAutomatic.Text" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
   <data name="buttonEdit.Text" xml:space="preserve">
-    <value>Bearbeiten...</value>
+    <value>Bearbeiten</value>
   </data>
   <data name="buttonRemove.Text" xml:space="preserve">
     <value>Entfernen</value>
   </data>
   <data name="buttonAdd.Text" xml:space="preserve">
-    <value>Hinzufügen...</value>
+    <value>Hinzufügen</value>
   </data>
   <data name="columnHeaderFrom.Text" xml:space="preserve">
     <value>Umbenennen von</value>
   </data>
   <data name="columnHeaderTo.Text" xml:space="preserve">
     <value>zu diesem</value>
+  </data>
+  <data name="contextMenuStripAutomatic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 70</value>
   </data>
   <data name="addToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>145, 22</value>
@@ -849,12 +855,6 @@
   </data>
   <data name="removeToolStripMenuItem.Text" xml:space="preserve">
     <value>Entfernen</value>
-  </data>
-  <data name="contextMenuStripAutomatic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 70</value>
-  </data>
-  <data name="tabPageAutomatic.Text" xml:space="preserve">
-    <value>Automatisch</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
