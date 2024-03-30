@@ -17,7 +17,7 @@ namespace TaskBarRenamer
         {
             get
             {
-                return "2012-11-12";
+                return "2024-03-30";
             }
         }
 
